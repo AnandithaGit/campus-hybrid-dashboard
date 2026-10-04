@@ -1,0 +1,19 @@
+{
+  "name": "campus-hybrid-cloud-dashboard",
+  "version": "1.0.0",
+  "description": "Academic demonstration dashboard for an AWS Site-to-Site VPN to a campus data centre.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "keywords": [
+    "aws",
+    "hybrid-networking",
+    "vpn",
+    "academic-project"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.21.2"
+  }
+}

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Academic demonstration dashboard for an AWS Site-to-Site VPN to a campus data centre.">
+  <title>Campus Hybrid Cloud Dashboard</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar">
+      <div class="brand">
+        <div class="brand-mark"><span></span><span></span><span></span></div>
+        <div><strong>Campus</strong><small>HYBRID CLOUD</small></div>
+      </div>
+      <div class="sidebar-label">PROJECT NAVIGATION</div>
+      <nav class="side-nav" aria-label="Project navigation">
+        <a class="active" href="#overview"><span class="nav-icon">⌂</span>Overview</a>
+        <a href="#architecture"><span class="nav-icon">⌁</span>Architecture</a>
+        <a href="#configuration"><span class="nav-icon">▦</span>Network configuration</a>
+        <a href="#challenges"><span class="nav-icon">!</span>Challenges</a>
+        <a href="#objectives"><span class="nav-icon">✓</span>Objectives</a>
+      </nav>
+      <div class="sidebar-footer">
+        <div class="demo-note"><span class="pulse"></span><div><b>Demonstration mode</b><small>Static project data only</small></div></div>
+        <div class="student-card"><div class="avatar">AH</div><div><b>Academic project</b><small>Cloud networking</small></div><span>•••</span></div>
+      </div>
+    </aside>
+
+    <main class="main-content">
+      <header class="topbar">
+        <button class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false" id="menuToggle">☰</button>
+        <div class="breadcrumb"><span>PROJECTS</span><i>/</i><strong>AWS HYBRID NETWORKING</strong></div>
+        <div class="top-actions"><span class="read-only"><span class="green-dot"></span>READ-ONLY DEMO</span><button class="icon-button" aria-label="Notifications">♧<b></b></button><div class="top-avatar">AH</div></div>
+      </header>
+
+      <div class="content-wrap">
+        <section class="hero" id="overview">
+          <div class="hero-copy">
+            <div class="eyebrow"><span class="eyebrow-line"></span>ACADEMIC AWS NETWORKING PROJECT</div>
+            <h1>AWS Site-to-Site VPN<br><em>to a Campus Data Centre</em></h1>
+            <p>A visual demonstration of secure hybrid connectivity, routing, and workload placement between campus infrastructure and an AWS VPC.</p>
+            <div class="hero-meta"><span class="meta-chip"><span class="chip-dot orange"></span>DEMO ENVIRONMENT</span><span class="updated">Last reviewed · 04 Oct 2026</span></div>
+          </div>
+          <div class="hero-visual" aria-hidden="true">
+            <div class="orb orb-one"></div><div class="orb orb-two"></div><div class="network-lines"></div>
+            <div class="hero-cloud">☁<small>HYBRID</small></div>
+          </div>
+        </section>
+
+        <section class="status-section" aria-labelledby="status-title">
+          <div class="section-heading"><div><span class="section-kicker">AT A GLANCE</span><h2 id="status-title">System status</h2></div><span class="simulation-badge">◉ SIMULATION</span></div>
+          <div class="status-grid">
+            <article class="status-card"><div class="status-top"><span class="status-icon purple">◇</span><span class="status-label">CONFIGURED</span></div><h3>AWS VPC</h3><p>Network boundary defined</p><div class="status-foot"><span class="bar purple-bar"></span><strong>10.0.0.0/16</strong></div></article>
+            <article class="status-card"><div class="status-top"><span class="status-icon blue">▣</span><span class="status-label">CONFIGURED</span></div><h3>EC2</h3><p>Web tier instance planned</p><div class="status-foot"><span class="bar blue-bar"></span><strong>t3.micro</strong></div></article>
+            <article class="status-card"><div class="status-top"><span class="status-icon orange">⌁</span><span class="status-label pending">PENDING VERIFICATION</span></div><h3>VPN</h3><p>IPsec tunnel parameters</p><div class="status-foot"><span class="bar orange-bar"></span><strong>2 tunnels · Demo</strong></div></article>
+            <article class="status-card"><div class="status-top"><span class="status-icon green">↔</span><span class="status-label">DESIGNED</span></div><h3>Routing</h3><p>Bidirectional paths mapped</p><div class="status-foot"><span class="bar green-bar"></span><strong>Campus ↔ AWS</strong></div></article>
+            <article class="status-card"><div class="status-top"><span class="status-icon pink">⌘</span><span class="status-label">SIMULATION</span></div><h3>Web application</h3><p>Hybrid workload placement</p><div class="status-foot"><span class="bar pink-bar"></span><strong>Port 80 / 443</strong></div></article>
+          </div>
+        </section>
+
+        <section class="architecture-section panel" id="architecture">
+          <div class="section-heading architecture-heading"><div><span class="section-kicker">NETWORK TOPOLOGY</span><h2>Hybrid architecture</h2><p>Secure traffic flow from the campus data centre into the AWS workload layer.</p></div><div class="legend"><span><i class="legend-dot campus"></i>Campus</span><span><i class="legend-dot aws"></i>AWS</span><span><i class="legend-line"></i>Encrypted path</span></div></div>
+          <div class="diagram">
+            <div class="diagram-node campus-node"><div class="node-icon">▦</div><div><span class="node-type">ON-PREMISES</span><h3>Campus Data Centre</h3><p>192.168.0.0/16</p></div><span class="node-check">✓</span></div>
+            <div class="diagram-connector"><span class="connector-line"></span><span class="connector-label">CUSTOMER GATEWAY</span></div>
+            <div class="diagram-node vpn-node"><div class="node-icon">⌁</div><div><span class="node-type">ENCRYPTED LINK</span><h3>IPsec Site-to-Site VPN</h3><p>Virtual Private Gateway · Demo</p></div><span class="node-status">PENDING</span></div>
+            <div class="diagram-connector"><span class="connector-line"></span><span class="connector-label">ROUTE TABLE</span></div>
+            <div class="diagram-node aws-node"><div class="node-icon">☁</div><div><span class="node-type">AWS VPC</span><h3>Application network</h3><p>Public + private subnets</p></div><span class="node-check">✓</span></div>
+            <div class="diagram-connector"><span class="connector-line"></span><span class="connector-label">PRIVATE SUBNET</span></div>
+            <div class="diagram-node ec2-node"><div class="node-icon">▣</div><div><span class="node-type">COMPUTE</span><h3>EC2 Web Application</h3><p>ap-south-1a · t3.micro</p></div><span class="node-check">✓</span></div>
+          </div>
+          <div class="diagram-caption"><span class="caption-lock">⌑</span><span><strong>Encrypted traffic flow</strong> &nbsp; All routes are designed for controlled, bidirectional communication. <b>Demo representation — no live AWS telemetry.</b></span></div>
+        </section>
+
+        <section class="lower-grid">
+          <div class="panel config-panel" id="configuration">
+            <div class="section-heading"><div><span class="section-kicker">REFERENCE VALUES</span><h2>Network configuration</h2></div><span class="config-tag">STATIC DATA</span></div>
+            <div class="config-list">
+              <div class="config-row"><span>VPC CIDR</span><strong>10.0.0.0/16</strong><small>Primary network</small></div>
+              <div class="config-row"><span>Subnet CIDR</span><strong>10.0.1.0/24</strong><small>Private application subnet</small></div>
+              <div class="config-row"><span>Route table</span><strong>rtb-campus-hybrid</strong><small>Campus route propagated</small></div>
+              <div class="config-row"><span>EC2 instance</span><strong>i-demo-web-01</strong><small>t3.micro · Amazon Linux</small></div>
+              <div class="config-row"><span>Availability Zone</span><strong>ap-south-1a</strong><small>Mumbai region</small></div>
+              <div class="config-row"><span>Public IP</span><strong>—</strong><small>Not assigned in demo</small></div>
+              <div class="config-row"><span>VPN status</span><strong class="value-pending">Pending verification</strong><small>Static configuration</small></div>
+            </div>
+          </div>
+          <div class="right-stack">
+            <div class="panel challenge-panel" id="challenges">
+              <div class="section-heading"><div><span class="section-kicker">LESSONS LEARNED</span><h2>Hybrid networking challenges</h2></div><span class="warning-icon">!</span></div>
+              <div class="challenge-list"><div><span class="challenge-number">01</span><p><strong>Phase 2 negotiation failures</strong>VPN proposals must match on encryption, authentication, and lifetime parameters.</p></div><div><span class="challenge-number">02</span><p><strong>Asymmetric routing</strong>Return traffic can fail when route tables do not select the same path in both directions.</p></div><div><span class="challenge-number">03</span><p><strong>Bidirectional route control</strong>Correct route propagation and explicit return routes keep the hybrid path predictable.</p></div></div>
+            </div>
+            <div class="panel objective-panel" id="objectives">
+              <div class="section-heading"><div><span class="section-kicker">PROJECT SCOPE</span><h2>Project objectives</h2></div></div>
+              <div class="objective-grid"><span>01 <b>Secure campus-to-AWS connectivity</b></span><span>02 <b>Hybrid application deployment</b></span><span>03 <b>Encrypted communication</b></span><span>04 <b>Reliable bidirectional routing</b></span><span>05 <b>Controlled network access</b></span></div>
+            </div>
+          </div>
+        </section>
+        <footer><span><b>Campus Hybrid Cloud Dashboard</b> · Academic demonstration interface</span><span>Built for presentation · Static sample data · No live AWS API connection</span></footer>
+      </div>
+    </main>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
